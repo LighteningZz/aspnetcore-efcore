@@ -11,13 +11,11 @@ Git Hub - [EntityFramework](https://github.com/aspnet/EntityFramework)
     - [Nuget EFCore SqlServer Design](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.SqlServer.Design)   
     - [Nuget EFCore Tools Dotnet](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools.DotNet)   
 ```xml
+<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="1.1.1" />
 <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="1.1.1" />
 <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.1" />
-<DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.Dotnet" Version="1.0.0" > 
-```
-**จะได้ประมาณนี้**  
----------------------------------
-![aspnetcore install efcore](/img/aspnetcore-install-efcore.jpg)  
+<DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.Dotnet" Version="1.0.0" /> 
+``` 
 **แล้วอย่าลืมสั่ง dotnet restore**
 ---------------------------------
 ```cmd
@@ -59,4 +57,62 @@ Commands:
   migrations  Commands to manage migrations.
 
 Use "dotnet ef [command] --help" for more information about a command.
+```
+**ใน Project นี้เราจะใช้ dbcontext** 
+--------------------------------- 
+```cmd
+$ dotnet ef dbcontext --help
+Usage: dotnet ef dbcontext [options] [command]
+
+Options:
+  -h|--help        Show help information
+  -v|--verbose     Show verbose output.
+  --no-color       Don't colorize output.
+  --prefix-output  Prefix output with level.
+
+Commands:
+  info      Gets information about a DbContext type.
+  list      Lists available DbContext types.
+  scaffold  Scaffolds a DbContext and entity types for a database.
+
+Use "dbcontext [command] --help" for more information about a command.
+```
+**การ Generate Database Object เราจะใช้ Scaffold** 
+--------------------------------- 
+```cmd
+$ dotnet ef dbcontext scaffold --help
+Usage: dotnet ef dbcontext scaffold [arguments] [options]
+
+Arguments:
+  <CONNECTION>  The connection string to the database.
+  <PROVIDER>    The provider to use. (E.g. Microsoft.EntityFrameworkCore.SqlServer)
+
+Options:
+  -d|--data-annotations                  Use attributes to configure the model (where possible). If omitted, only the fluent API is used.
+  -c|--context <NAME>                    The name of the DbContext.
+  -f|--force                             Overwrite existing files.
+  -o|--output-dir <PATH>                 The directory to put files in. Paths are relative to the project directory.
+  --schema <SCHEMA_NAME>...              The schemas of tables to generate entity types for.
+  -t|--table <TABLE_NAME>...             The tables to generate entity types for.
+  --json                                 Show JSON output.
+  -p|--project <PROJECT>                 The project to use.
+  -s|--startup-project <PROJECT>         The startup project to use.
+  --framework <FRAMEWORK>                The target framework.
+  --configuration <CONFIGURATION>        The configuration to use.
+  --msbuildprojectextensionspath <PATH>  The MSBuild project extensions path. Defaults to "obj".
+  -e|--environment <NAME>                The environment to use. Defaults to "Development".
+  -h|--help                              Show help information
+  -v|--verbose                           Show verbose output.
+  --no-color                             Don't colorize output.
+  --prefix-output                        Prefix output with level.
+```
+ **Scaffold ต้องการ Arguments 2 ตัวคือ** 
+---------------------------------    
+  - Connection String 
+  - Database Provider  ซึ่งในที่นี้เราจะใช้ SqlServer  
+--------------------------------- 
+**ตัวอย่างคำสั่งที่เราใช้ในการสร้าง Database Object** 
+---------------------------------  
+```cmd
+$ dotnet ef dbcontext scaffold "Server=.\SQLEXPRESS2014;Database=aspnetcore-efcore;User Id=sa;Password=1;" "Microsoft.EntityFrameworkCore.SqlServer" -o Models/Database -c Db -d
 ```
