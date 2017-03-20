@@ -1,0 +1,9 @@
+D:\Desktop\aspnetcore-efcore\aspnetcore-efcore\bin\Debug\netcoreapp1.1\aspnetcore-efcore.deps.json
+D:\Desktop\aspnetcore-efcore\aspnetcore-efcore\bin\Debug\netcoreapp1.1\aspnetcore-efcore.runtimeconfig.json
+D:\Desktop\aspnetcore-efcore\aspnetcore-efcore\bin\Debug\netcoreapp1.1\aspnetcore-efcore.runtimeconfig.dev.json
+D:\Desktop\aspnetcore-efcore\aspnetcore-efcore\bin\Debug\netcoreapp1.1\aspnetcore-efcore.dll
+D:\Desktop\aspnetcore-efcore\aspnetcore-efcore\bin\Debug\netcoreapp1.1\aspnetcore-efcore.pdb
+D:\Desktop\aspnetcore-efcore\aspnetcore-efcore\obj\Debug\netcoreapp1.1\aspnetcore-efcore.AssemblyInfo.cs
+D:\Desktop\aspnetcore-efcore\aspnetcore-efcore\obj\Debug\netcoreapp1.1\aspnetcore-efcore.dll
+D:\Desktop\aspnetcore-efcore\aspnetcore-efcore\obj\Debug\netcoreapp1.1\aspnetcore-efcore.pdb
+D:\Desktop\aspnetcore-efcore\aspnetcore-efcore\obj\Debug\netcoreapp1.1\aspnetcore-efcore.csprojResolveAssemblyReference.cache
