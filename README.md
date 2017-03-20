@@ -7,9 +7,10 @@ Git Hub - [EntityFramework](https://github.com/aspnet/EntityFramework)
 แก้ไฟล์ .csproj ของโปรเจคของเรา  
 เพิ่ม PackageReference และ DotNetCliToolReference ให้กับตัวโปรเจคของเรา  
 อ้างอิง  
-    - [Nuget EFCore SqlServer](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.SqlServer)  
-    - [Nuget EFCore SqlServer Design](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.SqlServer.Design)   
-    - [Nuget EFCore Tools Dotnet](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools.DotNet)   
+  - [Nuget EFCore Design](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Design)    
+  - [Nuget EFCore SqlServer](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.SqlServer)  
+  - [Nuget EFCore SqlServer Design](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.SqlServer.Design)   
+  - [Nuget EFCore Tools Dotnet (เป็น Tool เพิ่มใน Nuget ไม่ได้ต้องมาพิมพ์เอง)](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools.DotNet)   
 ```xml
 <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="1.1.1" />
 <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="1.1.1" />
@@ -58,7 +59,7 @@ Commands:
 
 Use "dotnet ef [command] --help" for more information about a command.
 ```
-**ใน Project นี้เราจะใช้ dbcontext** 
+**ในโปรเจคนี้เราจะใช้ dbcontext** 
 --------------------------------- 
 ```cmd
 $ dotnet ef dbcontext --help
