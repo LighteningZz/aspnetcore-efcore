@@ -12,7 +12,7 @@ namespace aspnetcore_efcore.Models.Database
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-            optionsBuilder.UseSqlServer(Startup.ConnectionString);
+            optionsBuilder.UseSqlServer(@"Server=.\SQLEXPRESS2014;Database=aspnetcore-efcore;User Id=sa;Password=1;");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

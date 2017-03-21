@@ -33,7 +33,7 @@ namespace aspnetcore_efcore.Controllers.Api
         [HttpPost("List")]
         public IActionResult List()
         {
-            return Json(new Data().List());
+            return Json(new { });
         }
 
     }

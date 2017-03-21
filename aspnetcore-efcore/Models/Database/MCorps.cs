@@ -14,17 +14,17 @@ namespace aspnetcore_efcore.Models.Database
         public string CorpCode { get; set; }
         [Column("CORP_NAME", TypeName = "varchar(50)")]
         public string CorpName { get; set; }
-        [Column("DELETE_STATUS", TypeName = "varchar(50)")]
-        public string DeleteStatus { get; set; }
+        [Column("DELETE_STATUS")]
+        public int? DeleteStatus { get; set; }
         [Column("CREATE_BY", TypeName = "varchar(50)")]
         public string CreateBy { get; set; }
-        [Column("CREATE_DATE", TypeName = "date")]
+        [Column("CREATE_DATE", TypeName = "datetime")]
         public DateTime? CreateDate { get; set; }
         [Column("UPDATE_BY", TypeName = "varchar(50)")]
         public string UpdateBy { get; set; }
-        [Column("UPDATE_DATE", TypeName = "date")]
+        [Column("UPDATE_DATE", TypeName = "datetime")]
         public DateTime? UpdateDate { get; set; }
-        [Column("REVISION", TypeName = "varchar(50)")]
-        public string Revision { get; set; }
+        [Column("REVISION")]
+        public int? Revision { get; set; }
     }
 }

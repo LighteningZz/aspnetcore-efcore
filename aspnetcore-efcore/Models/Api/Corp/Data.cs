@@ -85,12 +85,12 @@ namespace aspnetcore_efcore.Models.Api.Corp
                     CorpId = Guid.NewGuid().ToString(),
                     CorpCode = param.CORP_CODE,
                     CorpName = param.CORP_NAME,
-                    DeleteStatus = "0",
+                    DeleteStatus = 0,
                     CreateBy = "Dev",
                     CreateDate = DateTime.Now,
                     UpdateBy = "Dev",
                     UpdateDate = DateTime.Now,
-                    Revision = "0"
+                    Revision = 0
                 };
                 db.MCorps.Add(corp);
                 db.SaveChanges();
