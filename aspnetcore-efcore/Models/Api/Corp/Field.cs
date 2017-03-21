@@ -14,5 +14,10 @@ namespace aspnetcore_efcore.Models.Api.Corp
             public string CORP_NAME { get; set; }
         }
 
+        public class Filter
+        {
+            public string SEARCH { get; set; }
+        }
+
     }
 }

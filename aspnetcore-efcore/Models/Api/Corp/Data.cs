@@ -25,11 +25,54 @@ namespace aspnetcore_efcore.Models.Api.Corp
             }
         }
 
-        public object List()
+        //  string param.SEARCH
+        public object List(Field.Filter param, int skip = 0, int take = 0, string sortby = "CORP_CODE ASC")
         {
             using (var db = new Db())
             {
-                return db.MCorps.ToList();
+                var data = (from c in db.MCorps.AsQueryable()
+                            select c);
+                if (!string.IsNullOrEmpty(sortby))
+                {
+                    string[] sortArray = sortby.Split(new char[0], StringSplitOptions.RemoveEmptyEntries);
+                    if (sortArray[1] == "ASC")
+                    {
+                        switch (sortArray[0])
+                        {
+                            case "CORP_NAME":
+                                data = data.OrderBy(c => c.CorpName);
+                                break;
+                            default:
+                                data = data.OrderBy(c => c.CorpCode);
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        switch (sortArray[0])
+                        {
+                            case "CORP_NAME":
+                                data = data.OrderByDescending(c => c.CorpName);
+                                break;
+                            default:
+                                data = data.OrderByDescending(c => c.CorpCode);
+                                break;
+                        }
+                    }
+                }
+                if (take > 0)
+                {
+                    data = data.Skip(skip).Take(take);
+                }
+                var Res = data.Select((e, i) => new
+                {
+                    RECORD = skip + i + 1,
+                    e.CorpId,
+                    e.CorpCode,
+                    e.CorpName,
+                }).ToList();
+
+                return Res;
             }
         }
 
